@@ -131,11 +131,10 @@ module CFDI
       factura.impuestos[:totalImpuestosTrasladados] = impuestos.attr('totalImpuestosTrasladados').to_f
       factura.impuestos[:traslados] = []
       impuestos.xpath('//Traslado').each do |traslado|
-        hash = {
-          impuesto: traslado.attr('impuesto'),
-          tasa: traslado.attr('tasa').to_f,
-          importe: traslado.attr('importe').to_f,
-        }
+        hash = {}
+        hash[:impuesto] = traslado.attr('impuesto') if traslado.attr('impuesto')
+        hash[:tasa] = traslado.attr('tasa').to_f if traslado.attr('tasa')
+        hash[:importe] = traslado.attr('importe').to_f if traslado.attr('importe')
         factura.impuestos[:traslados] << hash
       end
     end
@@ -145,11 +144,10 @@ module CFDI
       factura.impuestos[:totalImpuestosRetenidos] = impuestos.attr('totalImpuestosRetenidos').to_f
       factura.impuestos[:retenciones] = []
       retenciones.xpath('//Retencion').each do |retencion|
-        hash = {
-          impuesto: retenido.attr('impuesto'),
-          tasa: retenido.attr('tasa').to_f,
-          importe: retenido.attr('importe').to_f,
-        }
+        hash = {}
+        hash[:impuesto] = retencion.attr('impuesto') if retencion.attr('impuesto')
+        hash[:tasa] = retencion.attr('tasa').to_f if retencion.attr('tasa')
+        hash[:importe] = retencion.attr('importe').to_f if retencion.attr('importe')
         factura.impuestos[:retenciones] << hash
       end
     end
