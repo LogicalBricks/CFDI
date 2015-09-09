@@ -115,19 +115,14 @@ module CFDI
     # En caso de darle un Hash o un {CFDI::Concepto}, agrega este a los conceptos, de otro modo, sobreescribe los conceptos pre-existentes
     #
     # @return [Array] Los conceptos de este comprobante
-    def conceptos= conceptos
-      if conceptos.is_a? Array
-        conceptos.map! do |concepto|
-          concepto = Concepto.new concepto unless concepto.is_a? Concepto
+    def conceptos=(conceptos)
+      if conceptos.is_a?(Hash) or conceptos.is_a?(Concepto)
+        @conceptos << build_concepto(conceptos)
+      elsif conceptos.is_a? Array
+        @conceptos = conceptos.map do |concepto|
+          build_concepto(concepto)
         end
-      elsif conceptos.is_a? Hash
-        conceptos << Concepto.new(concepto)
-      elsif conceptos.is_a? Concepto
-        conceptos << conceptos
       end
-
-      @conceptos = conceptos
-      conceptos
     end
 
 
@@ -394,5 +389,8 @@ module CFDI
       self.subTotal+iva
     end
 
+    def build_concepto(concepto)
+      concepto.is_a?(Concepto) ? concepto : Concepto.new(concepto)
+    end
   end
 end
