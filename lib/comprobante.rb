@@ -2,8 +2,6 @@ module CFDI
   # La clase principal para crear Comprobantes
   class Comprobante
 
-    @addenda = nil
-
     @@options = {
       tasa: 0.16,
       defaults: {
