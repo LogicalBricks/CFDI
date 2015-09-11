@@ -1,22 +1,23 @@
 # encoding: utf-8
-gem 'nokogiri', '1.5.11'
 
-require_relative 'version.rb'
-require_relative 'comun.rb'
-require_relative 'addenda.rb'
-require_relative 'impuestos.rb'
-require_relative 'nomina.rb'
-require_relative 'comprobante.rb'
-require_relative 'entidad.rb'
-require_relative 'concepto.rb'
-require_relative 'complemento.rb'
-require_relative 'xml.rb'
-require_relative 'certificado.rb'
-require_relative 'key.rb'
+require_relative 'version'
+require_relative 'comun'
+require_relative 'addenda'
+require_relative 'impuestos'
+require_relative 'nomina'
+require_relative 'comprobante'
+require_relative 'entidad'
+require_relative 'concepto'
+require_relative 'complemento'
+require_relative 'xml'
+require_relative 'certificado'
+require_relative 'key'
 
 # Comprobantes fiscales digitales por los internets
 # 
-# El sistema de generación y sellado de facturas es una patada en los genitales. Este gem pretende ser una bolsa de hielos. Igual va a doler, pero espero que al menos no quede moretón.
+# El sistema de generación y sellado de facturas es una patada en los
+# genitales. Este gem pretende ser una bolsa de hielos. Igual va a doler, pero
+# espero que al menos no quede moretón.
 module CFDI
 
   require 'nokogiri'
