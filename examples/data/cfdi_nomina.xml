@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nomina="http://www.sat.gob.mx/nomina" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd http://www.sat.gob.mx/nomina http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina11.xsd" version="3.2" fecha="2015-09-08T00:21:36" folio="1" serie="EPN" subTotal="85000000.00" descuento="4321.00" total="84994445.00" Moneda="MXN" condicionesDePago="Contado" NumCtaPago="No identificado" tipoDeComprobante="egreso" noCertificado="20001000000200000192" certificado="MIIERjCCAy6gAwIBAgIUMjAwMDEwMDAwMDAyMDAwMDAxOTIwDQYJKoZIhvcNAQEFBQAwggFcMRowGAYDVQQDDBFBLkMuIDIgZGUgcHJ1ZWJhczEvMC0GA1UECgwmU2VydmljaW8gZGUgQWRtaW5pc3RyYWNpw7NuIFRyaWJ1dGFyaWExODA2BgNVBAsML0FkbWluaXN0cmFjacOzbiBkZSBTZWd1cmlkYWQgZGUgbGEgSW5mb3JtYWNpw7NuMSkwJwYJKoZIhvcNAQkBFhphc2lzbmV0QHBydWViYXMuc2F0LmdvYi5teDEmMCQGA1UECQwdQXYuIEhpZGFsZ28gNzcsIENvbC4gR3VlcnJlcm8xDjAMBgNVBBEMBTA2MzAwMQswCQYDVQQGEwJNWDEZMBcGA1UECAwQRGlzdHJpdG8gRmVkZXJhbDESMBAGA1UEBwwJQ295b2Fjw6FuMTQwMgYJKoZIhvcNAQkCDCVSZXNwb25zYWJsZTogQXJhY2VsaSBHYW5kYXJhIEJhdXRpc3RhMB4XDTEyMTAyMjIwNDgwNloXDTE2MTAyMjIwNDgwNlowgcAxITAfBgNVBAMTGEVESVRPUklBTCBTSVNUQSBTQSBERSBDVjEhMB8GA1UEKRMYRURJVE9SSUFMIFNJU1RBIFNBIERFIENWMSEwHwYDVQQKExhFRElUT1JJQUwgU0lTVEEgU0EgREUgQ1YxJTAjBgNVBC0THEVTSTkyMDQyNzg4NiAvIEhFR1Q3NjEwMDM0UzIxHjAcBgNVBAUTFSAvIEhFR1Q3NjEwMDNNREZSTk4wOTEOMAwGA1UECxMFQW1pZ2EwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK6YqAg3LHOPpAKD9OFkcNgB5wj+3k4oHPK3bFfku4TCEswtMhIt5LnZCt4UK0cp9SYpKMa2kZVYm6k6zphWg9bzv3pvHwt9mB6kFGyApU71cOk16unqL2o/pDj65zNtUBfDyKkKBUGQMYgtqvVq6aXJipqKOS/NsDKEUt0q1ghTAgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3DQEBBQUAA4IBAQCgCCpYDbmN8npLX6vHCEJAF/1G3KhuAGY48wVt1va1YXRy6yj+tJZ9HZ3l8TY7J6n10XkrbzedOArKyjdpfqWbNabZHw6b2IlSN8HrHliiAEor5hwTUJnkg6S1nm0mmirInxCmWoVV+qrEX/XHylJ+OjIql/GyZrH9sEPCY+LYFfVhO0U73jKqajMEeZtWYq5wro4UhPUhlYgwhlzUN6XNWtiC8ohjE6QJaf8jYRsJjHraZL257O1o5T/3ULMJhASN7R211FmyAuiYsq8H3buPE0kl+EmN8DUNpTDkB9Xf1ba6gXZ0PRXF1oGUwxvX9FiI5eIau2RLfy9AfJPcpAXN" formaDePago="Pago en una sola exhibición" metodoDePago="Efectivo" LugarExpedicion="Distrito Federal" sello="YXdR+Iw1rCpLPvUPnu+EuLMmFUdewfTFYcus3KExTKKyZCOuEgDPannmOr+WdcNu7WNafhnh6k2lVMwCcAwH+y58n6xxNdyHqF1czAdrkA3e4/8qaey9nl8U5GHuwlbG0Gzz7xL7PQan78+IuRBbKoHkZ2M/ZFBA9FksBSHMScc=">
+  <cfdi:Emisor nombre="TELEVISA SA DE CV" rfc="TEL721214GK7">
+    <cfdi:DomicilioFiscal calle="Av. Chapultepec" noExterior="18" colonia="Doctores" localidad="DF" municipio="Del. Cuauhtemoc" estado="Distrito Federal" pais="México" codigoPostal="05724"/>
+    <cfdi:RegimenFiscal Regimen="Régimen general de ley personas morales"/>
+  </cfdi:Emisor>
+  <cfdi:Receptor nombre="Angélica Rivera Hurtado" rfc="RIHA6908026W0">
+	<cfdi:Domicilio calle="Sierra Gorda" noExterior="150" colonia="Lomas de Chapultepec" localidad="Chilangolandia" municipio="Del. Miguel Hidalgo" estado="Distrito Federal" pais="México" codigoPostal="11000"/>	
+	  </cfdi:Receptor>
+  <cfdi:Conceptos>
+    <cfdi:Concepto cantidad="1" unidad="N/A" descripcion="Pago por los servicios prestados" valorUnitario="85000000.0" importe="85000000.0"/>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos totalImpuestosRetenidos="1234.00">
+    <cfdi:Retenciones>
+      <cfdi:Retencion impuesto="ISR" importe="1234"/>
+    </cfdi:Retenciones>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <nomina:Nomina Version="1.1" RegistroPatronal="A1234567890" NumEmpleado="132" CURP="RIHA690802MDFVRN02" TipoRegimen="7" NumSeguridadSocial="12345678901" FechaPago="2012-01-01" FechaInicialPago="1990-01-01" FechaFinalPago="2012-01-01" NumDiasPagados="8034" Departamento="Publicidad" FechaInicioRelLaboral="1998-12-31" Puesto="Agente de ventas" TipoJornada="Nocturna" PeriodicidadPago="Quincenal" RiesgoPuesto="1">
+      <nomina:Percepciones TotalGravado="85000000.00" TotalExento="0.00">
+        <nomina:Percepcion TipoPercepcion="001" Clave="001" Concepto="Pago de Servicios Día D" ImporteGravado="85000000.0" ImporteExento="0.0"/>
+      </nomina:Percepciones>
+      <nomina:Deducciones TotalGravado="5555.00" TotalExento="0.00">
+        <nomina:Deduccion TipoDeduccion="001" Clave="3434" Concepto="IMSS" ImporteGravado="4321.0" ImporteExento="0.0"/>
+        <nomina:Deduccion TipoDeduccion="002" Clave="4884" Concepto="Retención por salarios" ImporteGravado="1234.0" ImporteExento="0.0"/>
+      </nomina:Deducciones>
+    </nomina:Nomina>
+    <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd" version="1.0" UUID="48A3DEB1-7A25-48D1-B1AF-9DEADFB2778C" FechaTimbrado="2015-09-08T00:21:37" selloCFD="YXdR+Iw1rCpLPvUPnu+EuLMmFUdewfTFYcus3KExTKKyZCOuEgDPannmOr+WdcNu7WNafhnh6k2lVMwCcAwH+y58n6xxNdyHqF1czAdrkA3e4/8qaey9nl8U5GHuwlbG0Gzz7xL7PQan78+IuRBbKoHkZ2M/ZFBA9FksBSHMScc=" noCertificadoSAT="20001000000100005761" selloSAT="J5DTDbAUzGXYnC0tvytAuJxzDZLvmvwcF/e156iDAc5OkLJ4hkXFUXbA0erc0B0s3j1AfVNE4PUx75JGda39xufmaoWszdEUXuZxI4Qg7Bwj/t/NbcqEnfiz1AL5c9IXnSJvDLrYvwTH6PzF13TmIOjml8zrViwQRwoLPUhfX+0="/>
+  </cfdi:Complemento>
+</cfdi:Comprobante>

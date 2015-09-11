@@ -8,7 +8,6 @@ module CFDI
   def self.from_xml(data)
     xml = Nokogiri::XML(data);
     xml.remove_namespaces!
-    factura = Comprobante.new
 
     comprobante = xml.at_xpath('//Comprobante')
     emisor = xml.at_xpath('//Emisor')
@@ -16,6 +15,8 @@ module CFDI
     exp = emisor.at_xpath('//ExpedidoEn')
     receptor = xml.at_xpath('//Receptor')
     dr = receptor.at_xpath('//Domicilio')
+
+    factura = xml.at_xpath('//Nomina') ? ComprobanteNomina.new : Comprobante.new
 
     factura.version = comprobante.attr('version')
     factura.serie = comprobante.attr('serie')
@@ -152,6 +153,61 @@ module CFDI
         retenciones << retencion
       end
       factura.impuestos.retenciones = retenciones
+    end
+
+    nomina_node = xml.at_xpath('//Nomina')
+    if nomina_node
+      nomina = Nomina.new
+      nomina.RegistroPatronal = nomina_node.attr('RegistroPatronal')
+      nomina.NumEmpleado = nomina_node.attr('NumEmpleado')
+      nomina.CURP = nomina_node.attr('CURP')
+      nomina.TipoRegimen = nomina_node.attr('TipoRegimen')
+      nomina.NumSeguridadSocial = nomina_node.attr('NumSeguridadSocial')
+      nomina.FechaPago = nomina_node.attr('FechaPago')
+      nomina.FechaInicialPago = nomina_node.attr('FechaInicialPago')
+      nomina.FechaFinalPago = nomina_node.attr('FechaFinalPago')
+      nomina.NumDiasPagados = nomina_node.attr('NumDiasPagados')
+      nomina.Departamento = nomina_node.attr('Departamento')
+      nomina.CLABE = nomina_node.attr('CLABE')
+      nomina.Banco = nomina_node.attr('Banco')
+      nomina.Puesto = nomina_node.attr('Puesto')
+      nomina.PeriodicidadPago = nomina_node.attr('PeriodicidadPago')
+
+      deducciones_node = nomina_node.at_xpath('//Deducciones')
+      if deducciones_node
+        deducciones = Nomina::Deducciones.new
+        deducciones.TotalGravado = deducciones_node.attr('TotalGravado')
+        deducciones.TotalExento = deducciones_node.attr('TotalExento')
+        deducciones_node.xpath('//Deduccion').each do |deduccion_node|
+          deduccion = Nomina::Deduccion.new
+          deduccion.TipoDeduccion = deduccion_node.attr('TipoDeduccion')
+          deduccion.Clave = deduccion_node.attr('Clave')
+          deduccion.Concepto = deduccion_node.attr('Concepto')
+          deduccion.ImporteGravado = deduccion_node.attr('ImporteGravado')
+          deduccion.ImporteExento = deduccion_node.attr('ImporteExento')
+          deducciones.deducciones << deduccion
+        end
+        nomina.Deducciones = deducciones
+      end
+
+      percepciones_node = nomina_node.at_xpath('//Percepciones')
+      if percepciones_node
+        percepciones = Nomina::Percepciones.new
+        percepciones.TotalGravado = percepciones_node.attr('TotalGravado')
+        percepciones.TotalExento = percepciones_node.attr('TotalExento')
+        percepciones_node.xpath('//Percepcion').each do |percepcion_node|
+          percepcion = Nomina::Percepcion.new
+          percepcion.TipoPercepcion = percepcion_node.attr('TipoPercepcion')
+          percepcion.Clave = percepcion_node.attr('Clave')
+          percepcion.Concepto = percepcion_node.attr('Concepto')
+          percepcion.ImporteGravado = percepcion_node.attr('ImporteGravado')
+          percepcion.ImporteExento = percepcion_node.attr('ImporteExento')
+          percepciones.percepciones << percepcion
+        end
+        nomina.Percepciones = percepciones
+
+        factura.nomina = nomina
+      end
     end
 
     factura

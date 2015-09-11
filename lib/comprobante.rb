@@ -11,6 +11,7 @@ module CFDI
         TipoCambio: 1,
         conceptos: [],
         impuestos: Impuestos.new,
+        nomina: Nomina.new,
         tipoDeComprobante: 'ingreso'
       }
     }
@@ -351,7 +352,7 @@ module CFDI
   private
 
     def deep_to_h(value)
-      if value.is_a? ElementoComprobante
+      if value.is_a?(ElementoComprobante) or value.is_a?(Hash)
         original = value.to_h
         value = {}
         original.each do |k,v|
@@ -403,4 +404,11 @@ module CFDI
       datos_cadena + [:emisor, :receptor, :conceptos, :serie, :folio, :sello, :noCertificado, :certificado, :conceptos, :complemento, :cancelada, :impuestos]
     end
   end
+
+  class ComprobanteNomina < Comprobante
+    def atributos
+      super + [:nomina]
+    end
+  end
+
 end
