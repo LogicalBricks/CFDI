@@ -205,9 +205,37 @@ module CFDI
           percepciones.percepciones << percepcion
         end
         nomina.Percepciones = percepciones
-
-        factura.nomina = nomina
       end
+
+      horas_extras_node = nomina_node.at_xpath('//HorasExtras')
+      if horas_extras_node
+        horas_extras = Nomina::HorasExtras.new
+        horas_extras_node.xpath('//HorasExtra').each do |horas_extra_node|
+          horas_extra = Nomina::HorasExtra.new
+          horas_extra.Dias = horas_extra_node.attr('Dias')
+          horas_extra.HorasExtra = horas_extra_node.attr('HorasExtra')
+          horas_extra.ImportePagado = horas_extra_node.attr('ImportePagado')
+          horas_extra.TipoHoras = horas_extra_node.attr('TipoHoras')
+          horas_extras.HorasExtras << horas_extra
+        end
+        nomina.HorasExtras = horas_extras
+      end
+
+      incapacidades_node = nomina_node.at_xpath('//Incapacidades')
+      if incapacidades_node
+        incapacidades = Nomina::Incapacidades.new
+        incapacidades_node.xpath('//Incapacidad').each do |incapacidad_node|
+          incapacidad = Nomina::Incapacidad.new
+          incapacidad.DiasIncapacidad = incapacidad_node.attr('DiasIncapacidad')
+          incapacidad.TipoIncapacidad = incapacidad_node.attr('TipoIncapacidad')
+          incapacidad.Descuento = incapacidad_node.attr('Descuento')
+          incapacidades.Incapacidades << incapacidad
+        end
+        nomina.Incapacidades = incapacidades
+      end
+
+      factura.nomina = nomina
+
     end
 
     factura

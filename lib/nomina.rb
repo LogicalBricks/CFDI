@@ -13,8 +13,8 @@ module CFDI
     def initialize
       @Percepciones = Percepciones.new
       @Deducciones = Deducciones.new
-      @HorasExtras = []
-      @Incapacidades = []
+      @HorasExtras = HorasExtras.new
+      @Incapacidades = Incapacidades.new
     end
 
     def NumDiasPagados=(numero)
@@ -89,11 +89,33 @@ module CFDI
       end
     end
 
+    class HorasExtras < ElementoComprobante
+      # @private
+      @cadenaOriginal = [:HorasExtras]
+      # @private
+      attr_accessor *@cadenaOriginal
+
+      def initialize
+        @HorasExtras = []
+      end
+    end
+
     class HorasExtra < ElementoComprobante
       # @private
       @cadenaOriginal = [:Dias, :HorasExtra, :ImportePagado, :TipoHoras]
       # @private
       attr_accessor *@cadenaOriginal
+    end
+
+    class Incapacidades < ElementoComprobante
+      # @private
+      @cadenaOriginal = [:Incapacidades]
+      # @private
+      attr_accessor *@cadenaOriginal
+
+      def initialize
+        @Incapacidades = []
+      end
     end
 
     class Incapacidad < ElementoComprobante

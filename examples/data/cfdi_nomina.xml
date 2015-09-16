@@ -24,6 +24,12 @@
         <nomina:Deduccion TipoDeduccion="001" Clave="3434" Concepto="IMSS" ImporteGravado="4321.0" ImporteExento="0.0"/>
         <nomina:Deduccion TipoDeduccion="002" Clave="4884" Concepto="Retención por salarios" ImporteGravado="1234.0" ImporteExento="0.0"/>
       </nomina:Deducciones>
+      <nomina:Incapacidades>
+        <nomina:Incapacidad DiasIncapacidad="1" TipoIncapacidad="2" Descuento="1.0"/>
+      </nomina:Incapacidades>
+      <nomina:HorasExtras>
+        <nomina:HorasExtra Dias="1" HorasExtra="2" ImportePagado="12345.67"/>
+      </nomina:HorasExtras>
     </nomina:Nomina>
     <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd" version="1.0" UUID="48A3DEB1-7A25-48D1-B1AF-9DEADFB2778C" FechaTimbrado="2015-09-08T00:21:37" selloCFD="YXdR+Iw1rCpLPvUPnu+EuLMmFUdewfTFYcus3KExTKKyZCOuEgDPannmOr+WdcNu7WNafhnh6k2lVMwCcAwH+y58n6xxNdyHqF1czAdrkA3e4/8qaey9nl8U5GHuwlbG0Gzz7xL7PQan78+IuRBbKoHkZ2M/ZFBA9FksBSHMScc=" noCertificadoSAT="20001000000100005761" selloSAT="J5DTDbAUzGXYnC0tvytAuJxzDZLvmvwcF/e156iDAc5OkLJ4hkXFUXbA0erc0B0s3j1AfVNE4PUx75JGda39xufmaoWszdEUXuZxI4Qg7Bwj/t/NbcqEnfiz1AL5c9IXnSJvDLrYvwTH6PzF13TmIOjml8zrViwQRwoLPUhfX+0="/>
   </cfdi:Complemento>
